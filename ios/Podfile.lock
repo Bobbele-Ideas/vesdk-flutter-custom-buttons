@@ -1,0 +1,36 @@
+PODS:
+  - Flutter (1.0.0)
+  - imgly_sdk (2.6.0):
+    - Flutter
+    - imglyKit (~> 11.1)
+  - imglyKit (11.2.0)
+  - video_editor_sdk (2.6.0):
+    - Flutter
+    - imgly_sdk (= 2.6.0)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - imgly_sdk (from `.symlinks/plugins/imgly_sdk/ios`)
+  - video_editor_sdk (from `.symlinks/plugins/video_editor_sdk/ios`)
+
+SPEC REPOS:
+  trunk:
+    - imglyKit
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  imgly_sdk:
+    :path: ".symlinks/plugins/imgly_sdk/ios"
+  video_editor_sdk:
+    :path: ".symlinks/plugins/video_editor_sdk/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  imgly_sdk: bb252939cfbf53a0199a40d565ab675db859a041
+  imglyKit: 505785f0467867523cdee38ebb7d60c5189faedf
+  video_editor_sdk: 2e8337c6604c6b5a8fc2f2b3f261a00da702b1b0
+
+PODFILE CHECKSUM: cc1f88378b4bfcf93a6ce00d2c587857c6008d3b
+
+COCOAPODS: 1.11.2

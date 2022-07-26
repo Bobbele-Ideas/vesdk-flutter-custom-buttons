@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:video_editor_sdk/video_editor_sdk.dart';
 
 void main() {
   runApp(const MyApp());
@@ -52,7 +53,14 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void openEditor() {
-    print("Open Editor");
+  void openEditor() async {
+    try {
+      final result = await VESDK.openEditor(Video("assets/Skater.mp4"));
+      // ignore: avoid_print
+      print(result?.toJson());
+    } catch (error) {
+      // ignore: avoid_print
+      print("An error occurred: $error");
+    }
   }
 }
