@@ -9,7 +9,6 @@ import Foundation
 import ImglyKit
 
 class CustomVideoEditor: VideoEditViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,7 +18,7 @@ class CustomVideoEditor: VideoEditViewController {
 
     /// Adds the export button to the editor's toolbar.
     func addExportButton() {
-        guard let contentView = self.toolbarItem.titleView else { return }
+        guard let contentView = toolbarItem.titleView else { return }
 
         if let label = contentView as? UILabel {
             label.text = nil
@@ -60,12 +59,12 @@ class CustomVideoEditor: VideoEditViewController {
     }
 
     /// The action of the export button.
-    @objc func export(sender: UIButton) {
-        self.renderHighResolutionVariant()
+    @objc func export(sender _: UIButton) {
+        renderHighResolutionVariant()
     }
 
     /// The action of the cancel button.
-    @objc func cancel(sender: UIButton) {
+    @objc func cancel(sender _: UIButton) {
         IMGLY.analytics.logEvent(.discardChanges)
         notifySubscribers { $0.viewControllerDidCancel(self) }
     }
