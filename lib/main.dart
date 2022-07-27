@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Theme;
 import 'package:video_editor_sdk/video_editor_sdk.dart';
+import 'package:imgly_sdk/imgly_sdk.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,7 +56,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void openEditor() async {
     try {
-      final result = await VESDK.openEditor(Video("assets/Skater.mp4"));
+      final configuration = Configuration(
+          theme: ThemeOptions(Theme("custom_theme",
+              backgroundColor: Colors.black,
+              menuBackgroundColor: Colors.black,
+              toolbarBackgroundColor: Colors.black)));
+      final result = await VESDK.openEditor(Video("assets/Skater.mp4"),
+          configuration: configuration);
       // ignore: avoid_print
       print(result?.toJson());
     } catch (error) {
