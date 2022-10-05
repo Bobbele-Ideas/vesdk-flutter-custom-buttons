@@ -9,6 +9,8 @@ import Foundation
 import ImglyKit
 
 class CustomVideoEditor: VideoEditViewController {
+    private var backButton: UIButton?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,6 +58,8 @@ class CustomVideoEditor: VideoEditViewController {
         constraints.append(button.heightAnchor.constraint(equalToConstant: 50))
         constraints.append(button.widthAnchor.constraint(equalToConstant: 50))
         NSLayoutConstraint.activate(constraints)
+
+        backButton = button
     }
 
     /// The action of the export button.
@@ -67,5 +71,17 @@ class CustomVideoEditor: VideoEditViewController {
     @objc func cancel(sender _: UIButton) {
         IMGLY.analytics.logEvent(.discardChanges)
         notifySubscribers { $0.viewControllerDidCancel(self) }
+    }
+
+    override func willPresent(_ toolController: PhotoEditToolController) {
+      super.willPresent(toolController)
+
+      backButton?.isHidden = true
+    }
+
+    override func willDismiss(_ toolController: PhotoEditToolController) {
+      super.willDismiss(toolController)
+
+      backButton?.isHidden = false
     }
 }

@@ -22,8 +22,11 @@ import video_editor_sdk
                 options.discardButtonConfigurationClosure = { button in
                     button.isHidden = true
                 }
+                options.discardConfirmationClosure = nil
             }
         }
+
+        MenuCollectionViewCell.appearance().dimsContentWhenNotSelected = false
 
         return super.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
