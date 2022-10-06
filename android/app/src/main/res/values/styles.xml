@@ -20,7 +20,7 @@
         <item name="imgly_background_color">#FF111111</item>
         <item name="imgly_camera_header_background_color">#27000000</item>
         <item name="imgly_camera_footer_background_color">#27000000</item>
-        <item name="imgly_highlight_color">#FF1B77FF</item>
+        <item name="imgly_highlight_color">#8c8c8c</item>
         <item name="imgly_icon_border_color_active">@color/imgly_highlight_color</item>
         <item name="imgly_slider_track_color_progress">@color/imgly_highlight_color</item>
         <item name="imgly_text_color">#FFFFFFFF</item>
