@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart' hide Theme;
-import 'package:video_editor_sdk/video_editor_sdk.dart';
 import 'package:imgly_sdk/imgly_sdk.dart';
+import 'package:video_editor_sdk/video_editor_sdk.dart';
 
 void main() {
   runApp(const MyApp());
