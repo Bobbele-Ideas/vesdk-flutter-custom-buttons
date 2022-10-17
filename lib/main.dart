@@ -57,10 +57,16 @@ class _MyHomePageState extends State<MyHomePage> {
   void openEditor() async {
     try {
       final configuration = Configuration(
-          theme: ThemeOptions(Theme("custom_theme",
-              backgroundColor: Colors.black,
-              menuBackgroundColor: Colors.black,
-              toolbarBackgroundColor: Colors.black)));
+        theme: ThemeOptions(
+          Theme(
+            "custom_theme",
+            backgroundColor: Colors.black,
+            menuBackgroundColor: Colors.black,
+            toolbarBackgroundColor: Colors.black,
+          ),
+        ),
+        tools: Tool.values,
+      );
       final result = await VESDK.openEditor(Video("assets/Skater.mp4"),
           configuration: configuration);
       // ignore: avoid_print
